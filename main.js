@@ -8,6 +8,7 @@ const blogPostRoute = require('./routes/blogPost');
 const emailRoute = require('./routes/email');
 const loginRoute = require('./routes/login');
 const OAuthRoute = require('./routes/OAuth');
+const homeRoute = require('./routes/home');
 const app = express();
 const googleStrategy = require('./middlewares/OAuthMiddleware');
 const passport = require('passport');
@@ -29,6 +30,7 @@ app.use('/', blogPostRoute);
 app.use('/', emailRoute);
 app.use('/', loginRoute);
 app.use('/', OAuthRoute);
+app.use('/', homeRoute);
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port${PORT}`));
