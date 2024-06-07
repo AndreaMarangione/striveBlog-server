@@ -8,7 +8,7 @@ OAuth.get('/auth/callback',
     passport.authenticate('google', { session: false, failureRedirect: '/login' }),
     function (req, res) {
         console.log(req.user.token);
-        res.redirect(`http://localhost:3000?T=${req.user.token}`);
+        res.redirect(`${process.env.CLIENT_URL}?T=${req.user.token}`);
     });
 
 module.exports = OAuth;
