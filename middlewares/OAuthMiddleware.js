@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const googleStrategy = new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: `${process.env.CLIENT_URL}/auth/callback`
+    callbackURL: `${process.env.SERVER_URL}/auth/callback`
 },
     async function (accessToken, refreshToken, profile, passportNext) {
         try {
